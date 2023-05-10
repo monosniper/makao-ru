@@ -184,6 +184,14 @@ export default class Store {
         }
     }
 
+    async masterPay(amount, withdrawal=false) {
+        try {
+            return await $api.post('securemasterpay-payment', {amount: amount*100, user_id: this.user.id, withdrawal})
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     async getAllUsers() {
         try {
             const response = await UserService.fetchUsers();
