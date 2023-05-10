@@ -556,7 +556,7 @@ const PushMoney = () => {
     const [payCompleted, setPayCompleted] = useState(false);
     const [amount, setAmount] = useState(10);
     const [bonus, setBonus] = useState(t('bonus_1'));
-    const [current, setCurrent] = useState('crypto');
+    const [current, setCurrent] = useState('card');
 
     const submitCard = (data) => {
         store.createPush({amount, ...data})
