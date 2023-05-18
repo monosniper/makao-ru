@@ -554,7 +554,7 @@ const PushMoney = () => {
     const { t } = useTranslation();
     const {store} = useContext(Context);
     const [payCompleted, setPayCompleted] = useState(false);
-    const [amount, setAmount] = useState(10);
+    const [amount, setAmount] = useState(800);
     const [bonus, setBonus] = useState(t('bonus_1'));
     const [current, setCurrent] = useState('card');
 
@@ -603,22 +603,22 @@ const PushMoney = () => {
             </div>
 
             {current !== 'crypto' ? null : <div className="alert">
-                {t('min_push')} - ₹10
+                {t('min_push')} - 800 ₽
                 <br/>
 
                 {t('network')} BEP20
             </div>}
             <div className="pushmoney-btn-toolbar">
-                <Button onClick={() => setAmount(10)} className="pushmoney-btn">₹10</Button>
-                <Button onClick={() => setAmount(20)} className="pushmoney-btn">₹20</Button>
-                <Button onClick={() => setAmount(50)} className="pushmoney-btn">₹50</Button>
-                <Button onClick={() => setAmount(100)} className="pushmoney-btn">₹100</Button>
-                <Button onClick={() => setAmount(200)} className="pushmoney-btn">₹200</Button>
+                <Button onClick={() => setAmount(800)} className="pushmoney-btn">800 ₽</Button>
+                <Button onClick={() => setAmount(1000)} className="pushmoney-btn">1000 ₽</Button>
+                <Button onClick={() => setAmount(1500)} className="pushmoney-btn">1500 ₽</Button>
+                <Button onClick={() => setAmount(2000)} className="pushmoney-btn">2000 ₽</Button>
+                <Button onClick={() => setAmount(5000)} className="pushmoney-btn">5000 ₽</Button>
             </div>
 
             <div className="pushmoney-amount-group">
-                <IconButton onClick={() => setAmount(amount - 1)} circle icon={<Minus />} />
-                <Input className='field' type='number' min="500" max="1000000" value={amount} onChange={setAmount} />
+                <IconButton onClick={() => setAmount(amount - 100)} circle icon={<Minus />} />
+                <Input className='field' type='number' min="800" max="1000000" value={amount} onChange={setAmount} />
                 <IconButton onClick={() => setAmount(amount + 100)} circle icon={<Plus />} />
             </div>
 
