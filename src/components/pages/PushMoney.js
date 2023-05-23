@@ -554,7 +554,7 @@ const PushMoney = () => {
     const { t } = useTranslation();
     const {store} = useContext(Context);
     const [payCompleted, setPayCompleted] = useState(false);
-    const [amount, setAmount] = useState(800);
+    const [amount, setAmount] = useState(300);
     const [bonus, setBonus] = useState(t('bonus_1'));
     const [current, setCurrent] = useState('card');
 
@@ -603,13 +603,13 @@ const PushMoney = () => {
             </div>
 
             {current !== 'crypto' ? null : <div className="alert">
-                {t('min_push')} - 800 ₽
+                {t('min_push')} - 300 ₽
                 <br/>
 
                 {t('network')} BEP20
             </div>}
             <div className="pushmoney-btn-toolbar">
-                <Button onClick={() => setAmount(800)} className="pushmoney-btn">800 ₽</Button>
+                <Button onClick={() => setAmount(300)} className="pushmoney-btn">300 ₽</Button>
                 <Button onClick={() => setAmount(1000)} className="pushmoney-btn">1000 ₽</Button>
                 <Button onClick={() => setAmount(1500)} className="pushmoney-btn">1500 ₽</Button>
                 <Button onClick={() => setAmount(2000)} className="pushmoney-btn">2000 ₽</Button>
@@ -618,7 +618,7 @@ const PushMoney = () => {
 
             <div className="pushmoney-amount-group">
                 <IconButton onClick={() => setAmount(amount - 100)} circle icon={<Minus />} />
-                <Input className='field' type='number' min="800" max="1000000" value={amount} onChange={setAmount} />
+                <Input className='field' type='number' min="300" max="1000000" value={amount} onChange={setAmount} />
                 <IconButton onClick={() => setAmount(amount + 100)} circle icon={<Plus />} />
             </div>
 
